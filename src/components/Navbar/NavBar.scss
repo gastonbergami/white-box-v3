@@ -1,0 +1,12 @@
+.active {
+  border-bottom: 2px solid #0b5ed7;
+  font-weight: bold;
+  color: #0b5ed7 !important;
+}
+
+button[aria-expanded="false"] > .close {
+  display: none;
+}
+button[aria-expanded="true"] > .open {
+  display: none;
+}
