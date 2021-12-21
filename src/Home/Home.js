@@ -3,8 +3,8 @@ import Cards from "../components/cards/Cards";
 import Filters from "../components/filters/Filters";
 import Pagination from "../components/pagination/Pagination";
 import Search from "../components/search/Search";
-import axios from "axios";
-
+import "./Home.scss";
+import { CharacterApi } from "../service/character";
 const Home = () => {
   const [pageNumber, setPageNumber] = useState(1);
   const [search, setSearch] = useState("");
@@ -14,21 +14,18 @@ const Home = () => {
   const [fetchData, upDateFetchData] = useState([]);
   const { info, results } = fetchData;
 
-  const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
   useEffect(() => {
-    // (async function () {
-    //   let data = await fetch(api).then((res) => res.json());
-    //   upDateFetchData(data);
-    // })();
-    axios
-      .get(api)
+    CharacterApi.get(
+      `?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`
+    )
       .then((results) => {
         upDateFetchData(results.data);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, [api]);
+  }, [gender, pageNumber, search, status, species]);
+
   return (
     <div className="App">
       <h1 className="text-center mb-4">Characters</h1>
