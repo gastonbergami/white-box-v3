@@ -5,6 +5,7 @@ import Pagination from '../components/pagination/Pagination';
 import Search from '../components/search/Search';
 import './Home.scss';
 import { CharacterApi } from '../service/character';
+
 const Home = () => {
   const [pageNumber, setPageNumber] = useState(1);
   const [search, setSearch] = useState('');

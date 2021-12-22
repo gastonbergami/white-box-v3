@@ -1,0 +1,33 @@
+{
+  "extends": "react-app",
+  "rules": {
+    "react/forbid-prop-types": 0,
+    "react/jsx-props-no-spreading": [1],
+    "react/no-array-index-key": [0],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx", ".tsx"]
+      }
+    ],
+    "linebreak-style": 0,
+    "no-unused-expressions": 0,
+    "no-underscore-dangle": 0,
+    "no-use-before-define": 0,
+    "import/imports-first": ["error", "absolute-first"],
+    "import/newline-after-import": "error",
+    "import/prefer-default-export": 0,
+    "semi": "error",
+    "max-len": [2, { "code": 140, "tabWidth": 4, "ignoreUrls": true }],
+    "camelcase": [
+      1,
+      {
+        "properties": "never",
+        "ignoreDestructuring": true,
+        "ignoreImports": true,
+        "allow": []
+      }
+    ]
+  },
+  "plugins": ["prettier"]
+}
