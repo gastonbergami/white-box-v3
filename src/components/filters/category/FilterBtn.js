@@ -1,7 +1,8 @@
-import React from "react";
-import "./FilterBtn.scss";
+import React from 'react';
+import './FilterBtn.scss';
 
-const FilterBtn = ({ name, index, items, task, setPageNumber }) => {
+// eslint-disable-next-line react/prop-types
+const FilterBtn = function ({ name, index, items, task, setPageNumber }) {
   return (
     <div>
       <div className="form-check ">

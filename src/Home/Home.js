@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
-import Cards from "../components/cards/Cards";
-import Filters from "../components/filters/Filters";
-import Pagination from "../components/pagination/Pagination";
-import Search from "../components/search/Search";
-import "./Home.scss";
-import { CharacterApi } from "../service/character";
+import React, { useEffect, useState } from 'react';
+import Cards from '../components/cards/Cards';
+import Filters from '../components/filters/Filters';
+import Pagination from '../components/pagination/Pagination';
+import Search from '../components/search/Search';
+import './Home.scss';
+import { CharacterApi } from '../service/character';
 const Home = () => {
   const [pageNumber, setPageNumber] = useState(1);
-  const [search, setSearch] = useState("");
-  const [status, setStatus] = useState("");
-  const [gender, setGender] = useState("");
-  const [species, setSpecies] = useState("");
+  const [search, setSearch] = useState('');
+  const [status, setStatus] = useState('');
+  const [gender, setGender] = useState('');
+  const [species, setSpecies] = useState('');
   const [fetchData, upDateFetchData] = useState([]);
   const { info, results } = fetchData;
 
@@ -46,11 +46,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Pagination
-        info={info}
-        pageNumber={pageNumber}
-        setPageNumber={setPageNumber}
-      />
+      <Pagination info={info} pageNumber={pageNumber} setPageNumber={setPageNumber} />
     </div>
   );
 };

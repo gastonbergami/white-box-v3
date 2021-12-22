@@ -1,7 +1,8 @@
-import { axiosBase } from ".";
+import { axiosBase } from '.';
 
 const CharacterApi = {
-  get: (url) => axiosBase.get(`/character/${url}`),
+  get: (url) => axiosBase.get(`/character/${url}`)
 };
 
+// eslint-disable-next-line import/prefer-default-export
 export { CharacterApi };
