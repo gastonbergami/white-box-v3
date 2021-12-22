@@ -1,8 +1,8 @@
-import React from "react";
-import { NavLink, Link } from "react-router-dom";
-import "./NavBar.scss";
+import React from 'react';
+import { NavLink, Link } from 'react-router-dom';
+import './NavBar.scss';
 
-const NavBar = () => {
+const NavBar = function () {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light mb-4">
       <div className="container">
@@ -18,13 +18,10 @@ const NavBar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <i class="fas fa-bars open fw-bold text-dark"></i>
-          <i class="fas fa-times close fw-bold text-dark"></i>
+          <i className="fas fa-bars open fw-bold text-dark" />
+          <i className="fas fa-times close fw-bold text-dark" />
         </button>
-        <div
-          className="collapse navbar-collapse justify-content-end"
-          id="navbarNavAltMarkup"
-        >
+        <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
           <div className="navbar-nav fs-5">
             <NavLink activeClassName="active" to="/" className="nav-link ">
               Characters

@@ -1,18 +1,19 @@
-import React from "react";
-import FilterBtn from "./FilterBtn";
-const Species = ({ setPageNumber, setSpecies }) => {
-  let species = [
-    "Human",
-    "Alien",
-    "Humanoid",
-    "Poopybutthole",
-    "Mythological",
-    "Unknown",
-    "Animal",
-    "Disease",
-    "Robot",
-    "Cronenberg",
-    "Planet",
+import React from 'react';
+import FilterBtn from './FilterBtn';
+// eslint-disable-next-line react/prop-types
+const Species = function ({ setPageNumber, setSpecies }) {
+  const species = [
+    'Human',
+    'Alien',
+    'Humanoid',
+    'Poopybutthole',
+    'Mythological',
+    'Unknown',
+    'Animal',
+    'Disease',
+    'Robot',
+    'Cronenberg',
+    'Planet'
   ];
   return (
     <div className="accordion-item">
@@ -39,6 +40,7 @@ const Species = ({ setPageNumber, setSpecies }) => {
             <FilterBtn
               task={setSpecies}
               setPageNumber={setPageNumber}
+              // eslint-disable-next-line react/no-array-index-key
               key={index}
               name="species"
               index={index}

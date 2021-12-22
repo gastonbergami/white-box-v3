@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from "react";
-import Cards from "../components/cards/Cards.js";
-import InputGroup from "../components/filters/category/InputGroup.js";
+import React, { useState, useEffect } from 'react';
+import Cards from '../components/cards/Cards';
+import InputGroup from '../components/filters/category/InputGroup';
 
-const Episodes = () => {
+const Episodes = function () {
   const [id, setID] = useState(1);
   const [info, setInfo] = useState([]);
   const [results, setResults] = useState([]);
-  console.log(results);
-  const { air_date, name } = info;
+
+  const { airDate, name } = info;
 
   const apiEpisode = `https://rickandmortyapi.com/api/episode/${id}`;
 
   useEffect(() => {
     (async function () {
-      let data = await fetch(apiEpisode).then((res) => res.json());
+      const data = await fetch(apiEpisode).then((res) => res.json());
       setInfo(data);
-      let epiMa = await Promise.all(
+      const epiMa = await Promise.all(
         data.characters.map((url) => {
           return fetch(url).then((res) => res.json());
         })
@@ -27,17 +27,10 @@ const Episodes = () => {
     <div className="container">
       <div className="row mb-3">
         <h1 className="text-center mb-4">
-          Episode :{" "}
-          <span className="text-primary">
-            {" "}
-            {name === "" ? "Unknown" : name}
-          </span>
+          Episode : <span className="text-primary"> {name === '' ? 'Unknown' : name}</span>
         </h1>
         <h5 className="text-center">
-          Air Date{" "}
-          <span className="text-primary">
-            {air_date === "" ? "Unknown" : air_date}
-          </span>
+          Air Date <span className="text-primary">{airDate === '' ? 'Unknown' : airDate}</span>
         </h5>
       </div>
       <div className="row ">

@@ -1,8 +1,9 @@
-import React from "react";
-import FilterBtn from "./FilterBtn";
+import React from 'react';
+import FilterBtn from './FilterBtn';
 
-const Status = ({ setStatus, setPageNumber }) => {
-  let status = ["Alive", "Dead", "Unknown"];
+// eslint-disable-next-line react/prop-types
+const Status = function ({ setStatus, setPageNumber }) {
+  const status = ['Alive', 'Dead', 'Unknown'];
   return (
     <div className="accordion-item">
       <h2 className="accordion-header" id="headingThree">
@@ -28,6 +29,7 @@ const Status = ({ setStatus, setPageNumber }) => {
             <FilterBtn
               task={setStatus}
               setPageNumber={setPageNumber}
+              // eslint-disable-next-line react/no-array-index-key
               key={index}
               name="status"
               index={index}

@@ -1,14 +1,14 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap";
-import Home from "./Home/Home.js";
-import NavBar from "./components/Navbar/NavBar";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './Home/Home';
+import NavBar from './components/Navbar/NavBar';
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Episodes from "./Pages/Episodes";
-import Location from "./Pages/Location";
-import CardDetail from "./components/cards/CardDetail";
+import Episodes from './Pages/Episodes';
+import Location from './Pages/Location';
+import CardDetail from './components/cards/CardDetail';
 
-function App() {
+const App = function () {
   return (
     <BrowserRouter>
       <div className="App">
@@ -24,6 +24,6 @@ function App() {
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 export default App;

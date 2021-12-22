@@ -1,8 +1,9 @@
-import React from "react";
-import FilterBtn from "./FilterBtn";
+import React from 'react';
+import FilterBtn from './FilterBtn';
 
-const Gender = ({ setPageNumber, setGender }) => {
-  let genders = ["female", "male", "genderless", "unknown"];
+// eslint-disable-next-line react/prop-types
+const Gender = function ({ setPageNumber, setGender }) {
+  const genders = ['female', 'male', 'genderless', 'unknown'];
   return (
     <div className="accordion-item">
       <h2 className="accordion-header" id="headingOne">
@@ -28,6 +29,7 @@ const Gender = ({ setPageNumber, setGender }) => {
             <FilterBtn
               task={setGender}
               setPageNumber={setPageNumber}
+              // eslint-disable-next-line react/no-array-index-key
               key={index}
               name="gender"
               index={index}

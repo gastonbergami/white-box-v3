@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import Cards from "../components/cards/Cards.js";
-import InputGroup from "../components/filters/category/InputGroup.js";
+import React, { useState, useEffect } from 'react';
+import Cards from '../components/cards/Cards';
+import InputGroup from '../components/filters/category/InputGroup';
 
-const Location = () => {
+const Location = function () {
   const [id, setID] = useState(1);
   const [info, setInfo] = useState([]);
   const [results, setResults] = useState([]);
@@ -13,12 +13,10 @@ const Location = () => {
 
   useEffect(() => {
     (async function () {
-      let data = await fetch(apiLocation).then((res) => res.json());
+      const data = await fetch(apiLocation).then((res) => res.json());
       setInfo(data);
-      let epiMa = await Promise.all(
-        data.residents.map((url) => {
-          return fetch(url).then((res) => res.json());
-        })
+      const epiMa = await Promise.all(
+        data.residents.map((url) => fetch(url).then((res) => res.json()))
       );
       setResults(epiMa);
     })();
@@ -27,22 +25,15 @@ const Location = () => {
     <div className="container">
       <div className="row mb-3">
         <h1 className="text-center mb-4">
-          Location :{" "}
-          <span className="text-primary">
-            {" "}
-            {name === "" ? "Unknown" : name}
-          </span>
+          Location : <span className="text-primary"> {name === '' ? 'Unknown' : name}</span>
         </h1>
         <h5 className="text-center">
-          Dimension :{" "}
-          <span className="text-primary">
-            {dimension === "" ? "Unknown" : dimension}
-          </span>
+          Dimension :{' '}
+          <span className="text-primary">{dimension === '' ? 'Unknown' : dimension}</span>
         </h5>
 
         <h6 className="text-center">
-          Type:{" "}
-          <span className="text-primary">{type === "" ? "Unknown" : type}</span>
+          Type: <span className="text-primary">{type === '' ? 'Unknown' : type}</span>
         </h6>
       </div>
       <div className="row">

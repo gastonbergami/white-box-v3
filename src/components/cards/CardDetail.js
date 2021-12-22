@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import "./CardDetail.scss";
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import './CardDetail.scss';
 
-const CardDetail = () => {
+const CardDetail = function () {
   const [fetchData, upDateFetchData] = useState([]);
-  let { name, image, location, origin, gender, species, status, type } =
-    fetchData;
-  let { id } = useParams();
-  let api = `https://rickandmortyapi.com/api/character/${id}`;
+  const { name, image, location, origin, gender, species, status, type } = fetchData;
+  const { id } = useParams();
+  const api = `https://rickandmortyapi.com/api/character/${id}`;
   useEffect(() => {
     (async function () {
-      let data = await fetch(api).then((res) => res.json());
+      const data = await fetch(api).then((res) => res.json());
       upDateFetchData(data);
     })();
   }, [api]);
@@ -21,13 +20,13 @@ const CardDetail = () => {
         <h1 className="text-center">{name}</h1>
         <img src={image} alt="" className="img-fluid" />
         {(() => {
-          if (status === "Dead") {
+          if (status === 'Dead') {
             return <div className=" badge bg-danger fs-5">{status}</div>;
-          } else if (status === "Alive") {
-            return <div className=" badge bg-success fs-5">{status}</div>;
-          } else {
-            return <div className="  badge bg-secondary fs-5">{status}</div>;
           }
+          if (status === 'Alive') {
+            return <div className=" badge bg-success fs-5">{status}</div>;
+          }
+          return <div className="  badge bg-secondary fs-5">{status}</div>;
         })()}
         <div className="content">
           <div>
@@ -40,7 +39,7 @@ const CardDetail = () => {
           </div>
           <div>
             <span className="fw-bold">Type:</span>
-            {type === "" ? "Unknown " : type}
+            {type === '' ? 'Unknown ' : type}
           </div>
           <div>
             <span className="fw-bold">Location:</span>
